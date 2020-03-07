@@ -3,7 +3,6 @@ package se.lexicon.anas.lenderbook.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,29 +10,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "book")
+@Table(name = "Book")
 public class Book implements Serializable {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private static final long serialVersionUID = 2L;
 
-	@Column(name = "title")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int bookId;
+
 	private String title;
 
-	@Column(name = "available")
 	private boolean available;
 	
-	@Column(name = "reserved")
 	private boolean reserved;
 	
-	@Column(name = "maxLoanDays")
 	private int maxLoanDays;
 	
-	@Column(name = "finePerDay")
 	private BigDecimal finePerDay;
 	
-	@Column(name = "description")
 	private String description;
 
 	public Book(String title, int maxLoanDays, BigDecimal finePerDay, String description) {
@@ -49,11 +44,11 @@ public class Book implements Serializable {
 	}
 
 	public int getBookId() {
-		return id;
+		return bookId;
 	}
 
 	public void setBookId(int bookId) {
-		this.id = bookId;
+		this.bookId = bookId;
 	}
 
 	public String getTitle() {
@@ -108,7 +103,7 @@ public class Book implements Serializable {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Book [bookId=");
-		builder.append(id);
+		builder.append(bookId);
 		builder.append(", title=");
 		builder.append(title);
 		builder.append(", available=");

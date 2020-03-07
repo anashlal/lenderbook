@@ -44,7 +44,7 @@ public class BookController {
 	
 	@PostMapping("/")
 	public String create(@RequestBody Book book){
-		bookRepo.save(new Book(book.getTitle(), book.getMaxLoanDays(),  book.getFinePerDay(), book.getDescription()));
+		bookRepo.save(book);
 		return "book is created";
 	}
 }
