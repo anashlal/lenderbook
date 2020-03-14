@@ -13,7 +13,7 @@ import se.lexicon.anas.lenderbook.repo.LoanRepository;
 
 @Service
 @Transactional
-public class LoanDaoImp implements LoanDao{
+public class LoanDaoImp implements LoanDao {
 	
 	private LoanRepository loan_repo;
 	

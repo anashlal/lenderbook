@@ -28,10 +28,6 @@ public class LibraryUser implements Serializable{
 		return userId;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
 	public LocalDate getRegDate() {
 		return regDate;
 	}
@@ -56,9 +52,8 @@ public class LibraryUser implements Serializable{
 		this.email = email;
 	}
 
-	public LibraryUser(int userId, LocalDate regDate, String name, String email) {
+	public LibraryUser(LocalDate regDate, String name, String email) {
 		super();
-		this.userId = userId;
 		this.regDate = regDate;
 		this.name = name;
 		this.email = email;

@@ -17,5 +17,4 @@ public interface LibrareUserDao {
 	LibraryUser update_LibraryUser(int id, LibraryUser update);
 
 	LibraryUser findBy_Email(String email);
-
 }

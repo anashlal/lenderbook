@@ -5,7 +5,5 @@ import se.lexicon.anas.lenderbook.model.LibraryUser;
 
 @Repository
 public interface LibraryUserRepository  extends CrudRepository<LibraryUser, Integer> {
-	
 	LibraryUser findByEmail(String email);
-
 }
