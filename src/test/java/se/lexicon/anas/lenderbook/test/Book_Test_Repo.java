@@ -1,4 +1,4 @@
-package se.lexicon.anas.lenderbook;
+package se.lexicon.anas.lenderbook.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,7 +6,6 @@ import java.awt.List;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;

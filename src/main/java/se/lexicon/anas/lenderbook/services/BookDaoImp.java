@@ -9,18 +9,17 @@ import org.springframework.transaction.annotation.Transactional;
 import se.lexicon.anas.lenderbook.model.Book;
 import se.lexicon.anas.lenderbook.repo.BookRepository;
 
-
 @Service
 @Transactional
 public class BookDaoImp implements BookDao {
 
 	private BookRepository book_repo;
 
-	//@Autowired
-	//public BookDaoImpl(Book_Repo book_repo) {
-	//	super();
-	//	this.book_repo = book_repo;
-	//}
+	// @Autowired
+	// public BookDaoImpl(Book_Repo book_repo) {
+	// super();
+	// this.book_repo = book_repo;
+	// }
 
 	@Override
 	public Book findById_Book(int id) {
@@ -76,5 +75,4 @@ public class BookDaoImp implements BookDao {
 		return book_repo.findByreserved(Isreserved);
 	}
 
-	
 }
