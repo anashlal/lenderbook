@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import se.lexicon.anas.lenderbook.model.Book;
 import se.lexicon.anas.lenderbook.model.LibraryUser;
 import se.lexicon.anas.lenderbook.model.Loan;
+import se.lexicon.anas.lenderbook.repo.BookRepository;
+import se.lexicon.anas.lenderbook.repo.LibraryUserRepository;
 import se.lexicon.anas.lenderbook.repo.LoanRepository;
 
 @Service
@@ -16,6 +18,8 @@ import se.lexicon.anas.lenderbook.repo.LoanRepository;
 public class LoanDaoImp implements LoanDao {
 	
 	private LoanRepository loan_repo;
+	private LibraryUserRepository libraryuser_rep;
+	private BookRepository book_repo;
 	
 		@Autowired
 		public LoanDaoImp(LoanRepository loan_repo) {
@@ -73,6 +77,19 @@ public class LoanDaoImp implements LoanDao {
 	
 			return loan_repo.findByterminated(Isterminated);
 	
+		}
+
+		@Override
+		public Loan findBylibraryUserId(int userid) {
+			LibraryUser orginal = libraryuser_rep.findById(userid).orElseThrow(IllegalArgumentException::new);
+			
+			return loan_repo.findByLibraryUser(orginal);
+		}
+
+		@Override
+		public Loan findByBookId(int bookid) {
+		
+			return loan_repo.findById(bookid).orElseThrow(IllegalArgumentException::new);
 		}
 
 }

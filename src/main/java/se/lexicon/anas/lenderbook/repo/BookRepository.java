@@ -5,6 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import se.lexicon.anas.lenderbook.model.Book;
+import se.lexicon.anas.lenderbook.model.Loan;
 
 @Repository
 public interface BookRepository extends CrudRepository<Book, Integer> {
@@ -16,4 +17,6 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 	Book findByavailable(boolean Isavailable);
 
 	Book findByreserved(boolean Isreserved);
+	
+	
 }

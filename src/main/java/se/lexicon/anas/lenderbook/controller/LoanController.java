@@ -49,7 +49,7 @@ public class LoanController {
 	}
 
 	@PostMapping("/Creatloan")
-	public ResponseEntity<Loan> create_loan(@RequestBody Loan newloan) {
+	public ResponseEntity<Loan> create_loan(@RequestBody Loan newloan)  {
 		if (newloan == null) {
 			return ResponseEntity.badRequest().build();
 		}

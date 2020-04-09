@@ -24,4 +24,7 @@ public interface LoanDao {
 	
 		Loan findByterminated(Boolean Isterminated);
 
+		Loan findBylibraryUserId (int userid);
+		
+		Loan findByBookId (int bookid);
 }

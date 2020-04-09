@@ -57,4 +57,71 @@ class Book_Test_Repo {
 	    // then
 	    assertNotNull(find);
 	}
+	
+	@Test
+	public void findById_Book_ShouldReturnTheCurrectBook() {
+	    // given
+	    Book book = new Book("title", 10, new BigDecimal("1.0"), "description");
+	    entityManager.persist(book);
+	    
+	    // when
+	    Book found = bookRepository.findById(book.getBookId()).orElseThrow(IllegalArgumentException::new);
+	    
+	     // then
+	    assertEquals(book.getBookId(), found.getBookId());
+	}
+	
+	@Test
+	public void findByavailable_Book_ShouldReturnTheCurrectBook() {
+	    // given
+	    Book book = new Book("title", 10, new BigDecimal("1.0"), "description");
+	    entityManager.persist(book);
+	    
+	    // when
+	    Book found = bookRepository.findById(book.getBookId()).orElseThrow(IllegalArgumentException::new);
+	    
+	     // then
+	    assertEquals(book.isAvailable(), found.isAvailable());
+	}
+	
+	@Test
+	public void findByRemove_Book_ShouldReturnTheExistBook() {
+	    // given
+	    Book book = new Book("title", 10, new BigDecimal("1.0"), "description");
+	    entityManager.persist(book);
+	    
+	    
+	    // when
+	    
+	     bookRepository.delete(book);
+	    
+	     // then
+	    assertEquals(bookRepository.existsById(book.getBookId()), false );
+	}
+	
+	@Test
+	public void findByUpdate_Book_ShouldReturnTheNewBook() {
+	    // given
+	    Book orginal = new Book("title", 10, new BigDecimal("1.0"), "description");
+	    entityManager.persist(orginal);
+	    
+	    
+	    // when
+	    
+	    orginal.setDescription("jhg");
+	    orginal.setMaxLoanDays(11);
+	    orginal.setTitle("ans");
+	    orginal.setAvailable(false);
+	    orginal.setFinePerDay(new BigDecimal("2.0"));
+	    entityManager.persist(orginal);
+	     // then
+	    Book update=bookRepository.findById(orginal.getBookId()).orElseThrow(IllegalArgumentException::new);
+	    
+	    assertEquals(update.isAvailable(), false );
+	    // to confirm the update 
+	    assertEquals(update.getTitle(), "ans" );
+	    assertEquals(update.getDescription(), "jhg" );
+	    assertEquals(update.getMaxLoanDays(), 11 );
+	   
+	}
 }

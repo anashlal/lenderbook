@@ -17,9 +17,9 @@ import se.lexicon.anas.lenderbook.services.LibrareUserDaoImp;
 	
 	@RestController
 	@RequestMapping("/myapp/api")
-	public class LibraryUserController {
+	public class LibraryUserController{
 		
-		private LibrareUserDaoImp librareuserServices;
+		private LibrareUserDaoImp librareuserServices ;
 		
 		
 		@GetMapping("/alllibrareuser/{id}")
