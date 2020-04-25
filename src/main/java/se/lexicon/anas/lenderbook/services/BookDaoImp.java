@@ -50,8 +50,6 @@ public class BookDaoImp implements BookDao {
 		Book orginal = findById_Book(id);
 		orginal.setTitle(update.getTitle());
 		orginal.setMaxLoanDays(update.getMaxLoanDays());
-		orginal.setAvailable(update.isAvailable());
-		orginal.setReserved(update.isReserved());
 		orginal.setFinePerDay(update.getFinePerDay());
 		orginal.setDescription(update.getDescription());
 		return book_repo.save(orginal);

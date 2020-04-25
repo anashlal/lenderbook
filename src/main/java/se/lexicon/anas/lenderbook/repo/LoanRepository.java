@@ -12,6 +12,8 @@ public interface LoanRepository extends CrudRepository<Loan, Integer> {
 	Loan findByLibraryUser(LibraryUser user);
 	
 	Loan findByterminated(Boolean Isterminated);
+	
+
 
 
 }

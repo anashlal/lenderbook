@@ -88,8 +88,9 @@ public class LoanDaoImp implements LoanDao {
 
 		@Override
 		public Loan findByBookId(int bookid) {
-		
-			return loan_repo.findById(bookid).orElseThrow(IllegalArgumentException::new);
+			Book book = book_repo.findById(bookid).orElseThrow(IllegalArgumentException::new);
+			
+			return findByBook(book);
 		}
 
 }
