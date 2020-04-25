@@ -31,7 +31,7 @@ class Book_Test_Repo {
 
 	@Test
 	public void findByTitle_ShouldReturnTheCurrectBook() {
-		// given
+		//// given
 		Book book = new Book("title", 10, new BigDecimal("1.0"), "description");
 		entityManager.persist(book);
 
@@ -44,7 +44,7 @@ class Book_Test_Repo {
 
 	@Test
 	public void whenFindByName_thenReturnEmployee() {
-		// given
+		/// given
 		LibraryUser libraryUser = new LibraryUser(LocalDate.now(), "", "test@test.com");
 		entityManager.persist(libraryUser);
 
@@ -57,7 +57,7 @@ class Book_Test_Repo {
 
 	@Test
 	public void findById_Book_ShouldReturnTheCurrectBook() {
-		// given
+		//// given
 		Book book = new Book("title", 10, new BigDecimal("1.0"), "description");
 		entityManager.persist(book);
 
@@ -83,7 +83,7 @@ class Book_Test_Repo {
 
 	@Test
 	public void findByRemove_Book_ShouldReturnTheExistBook() {
-		// given
+		/// given
 		Book book = new Book("title", 10, new BigDecimal("1.0"), "description");
 		entityManager.persist(book);
 
@@ -98,7 +98,7 @@ class Book_Test_Repo {
 	@Test
 	public void findByUpdate_Book_ShouldReturnTheNewBook() {
 
-		// given
+		/// given
 
 		Book orginal = new Book("title", 11, new BigDecimal("1.0"), "description");
 		entityManager.persist(orginal);
